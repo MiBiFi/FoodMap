@@ -1,0 +1,11 @@
+ /* style.css */
+
+ @import url('css/_base.css');
+ @import url('css/_layout.css');
+ @import url('css/_food_diary.css');
+ @import url('css/_modal.css');
+ @import url('css/_widgets.css');
+ @import url('css/_sidebar_left.css');
+ @import url('css/_recommendations.css');
+ @import url('css/_user_profile.css');
+ @import url('css/_responsive.css');

@@ -1,0 +1,32 @@
+{
+    "name": "assistant-engine/php-openai-client",
+    "description": "Experimental PHP client for OpenAI’s new Responses API",
+    "homepage": "https://github.com/AssistantEngine/php-openai-client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Florian Weigang",
+            "email": "florian@assistant-engine.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "AssistantEngine\\OpenAI\\": "src/"
+        }
+    },
+    "require-dev": {
+        "vlucas/phpdotenv": "^5.6",
+        "assistant-engine/open-functions-core": "^1.1"
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.9"
+    }
+}

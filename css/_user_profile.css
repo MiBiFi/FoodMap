@@ -1,0 +1,141 @@
+/* css/_user_profile.css */
+
+.user-profile-view { padding: 10px; }
+.user-profile-view h2 { text-align: center; margin-bottom: 30px; padding-bottom: 10px; border-bottom: 1px solid #EFEBE9; }
+.profile-section { margin-bottom: 35px; padding: 20px; background-color: #FFFDF5; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.section-header-wrapper { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.profile-section h3 { font-size: 1.2em; color: #6D4C41; margin-bottom: 0; display: flex; align-items: center; flex-grow: 1; }
+.edit-mode-button { padding: 5px 15px; border-radius: 5px; cursor: pointer; font-size: 0.9em; font-weight: bold; border: 1px solid #A1887F; background-color: #FFF9E8; color: #5D4037; flex-shrink: 0; }
+.edit-mode-button:hover { background-color: #F5E5C0; }
+.edit-mode-button.is-editing { background-color: #A1887F; color: white; border-color: #8D6E63; }
+.edit-mode-button.is-editing:hover { background-color: #8D6E63; }
+
+.profile-form { margin-top: 15px; }
+.profile-form .form-row { display: flex; align-items: center; margin-bottom: 15px; gap: 10px; }
+.profile-form label { flex-basis: 100px; text-align: right; font-weight: bold; color: #795548; }
+.profile-form input[type="text"],
+.profile-form input[type="date"],
+.profile-form input[type="time"] { flex: 1; padding: 8px 10px; border: 1px solid #D7CCC8; border-radius: 5px; font-size: 0.95em; }
+.profile-form .form-buttons { justify-content: flex-end; }
+
+.save-button, .delete-button, .add-button { padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 0.9em; font-weight: bold; border: 1px solid; margin-left: 10px; }
+.save-button { background-color: #A1887F; color: white; border-color: #8D6E63; }
+.save-button:hover { background-color: #8D6E63; }
+.add-button { background-color: #C5E1A5; color: #558B2F; border-color: #AED581; display: block; margin: 15px 0 0 0; }
+.add-button:hover { background-color: #AED581; color: white; }
+.delete-button:not(.preference-tag .delete-button) { background-color: #EF9A9A; color: #D32F2F; border-color: #E57373; }
+.delete-button:not(.preference-tag .delete-button):hover { background-color: #E57373; color: white; }
+
+/* Preference Edit Section Styles */
+.preference-display-area { margin-bottom: 15px; }
+.pref-list-container { margin-bottom: 15px; }
+.pref-list-container h4 { font-size: 1em; color: #8D6E63; margin-bottom: 10px; font-weight: bold; }
+.pref-list-container ul { list-style: none; padding-left: 0; margin-top: 0; }
+
+.preference-tag { padding: 5px 8px 5px 12px; border-radius: 15px; display: inline-flex; align-items: center; margin: 0 8px 8px 0; font-size: 0.95em; border: 1px solid transparent; }
+.preference-tag.like { background-color: #F5E5C0; color: #6D4C41; border-color: #E0D6B9; }
+.preference-tag.dislike { background-color: #FFF0F0; color: #8D6E63; border-color: #F5E1E1; }
+.preference-tag .pref-text { margin-right: 8px; }
+.preference-tag .delete-button { background-color: #EF9A9A; color: #fff; border-color: #E57373; padding: 2px 6px; font-size: 0.85em; margin-left: 8px; line-height: 1; border-radius: 4px; vertical-align: middle; font-weight: bold; display: none; cursor: pointer; }
+.preference-tag .delete-button:hover { background-color: #E57373;}
+
+.section-divider { border: none; border-top: 1px dashed #E0D6B9; margin: 25px 0; }
+.add-edit-prefs-section { display: none; }
+.add-pref-wrapper { display: flex; flex-direction: column; align-items: stretch; }
+.add-pref-input-group { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+.add-pref-input-group label { flex-basis: auto; text-align: left; font-size: 0.95em; color: #8D6E63; margin-right: 5px; }
+.add-pref-input-group input[type="text"] { border-width: 1px; border-color: #C5C5C5; flex-grow: 1; min-width: 200px; border-radius: 4px; padding: 9px 10px; }
+.add-buttons-container { display: flex; justify-content: center; gap: 15px; }
+.add-buttons-container .save-button { margin-left: 0; padding: 9px 18px; border-radius: 4px; white-space: nowrap; font-size: 0.9em; }
+.add-buttons-container .like-button { background-color: #A9A9A9; color: white; border-color: #808080; }
+.add-buttons-container .like-button:hover { background-color: #808080; }
+.add-buttons-container .dislike-button { background-color: #F4BDBD; color: #C62828; border-color: #EF9A9A; }
+.add-buttons-container .dislike-button:hover { background-color: #EF9A9A; color: white; }
+
+.preference-section.editing-mode .preference-tag .delete-button { display: inline-block; }
+.preference-section.editing-mode .add-edit-prefs-section { display: block; }
+
+.pet-form { border: 1px solid #EFEBE9; padding: 15px; border-radius: 5px; margin-bottom: 15px; }
+
+.pet-image-upload-section {
+    display: flex; /* Align label and content side-by-side */
+    flex-direction: column; /* Stack items vertically in the content part */
+    align-items: flex-start; /* Align items to the start of the column */
+    gap: 8px; /* Space between elements */
+}
+
+.pet-image-upload-section > label { /* Style for the "寵物圖片:" label */
+    flex-basis: 100px; /* Same as other labels in profile form */
+    text-align: right;
+    font-weight: bold;
+    color: #795548;
+    margin-bottom: 5px; /* Add some space below the main label */
+}
+
+.pet-image-preview-container {
+    display: inline-block; /* Or block, depending on layout preference */
+    width: 120px; /* Adjust as needed */
+    height: 120px; /* Adjust as needed */
+    border: 1px dashed #D7CCC8;
+    border-radius: 5px;
+    overflow: hidden; /* Clip image if it's larger */
+    margin-bottom: 10px; /* Space below preview */
+    position: relative; /* For potential overlay elements if needed */
+    background-color: #f9f9f9; /* Light background for placeholder */
+}
+
+.pet-image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop image to fit, or use 'contain' */
+    display: block; /* Remove extra space below image */
+}
+
+.pet-image-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    align-items: center;
+}
+
+.button-link-style { /* Basic styling for buttons to look like links */
+    background: none;
+    border: none;
+    color: #007bff; /* Bootstrap link color, or your theme's link color */
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.9em;
+    text-decoration: underline;
+}
+.button-link-style:hover {
+    color: #0056b3;
+}
+.button-link-style i {
+    margin-right: 4px;
+}
+
+/* Responsive adjustments for pet image section if needed */
+@media (max-width: 768px) {
+    .pet-image-upload-section {
+        flex-direction: column; /* Stack label and preview/buttons vertically */
+        align-items: flex-start;
+    }
+    .pet-image-upload-section > label {
+        text-align: left;
+        margin-bottom: 5px;
+        flex-basis: auto; /* Allow label to take its natural width */
+    }
+    .pet-image-preview-container {
+        margin-bottom: 8px;
+    }
+}
+
+/* In _user_profile.css */
+#save-schedule-form textarea#gcal_event_description {
+    min-height: 100px; /* 設定一個最小高度，例如 80px */
+    /* 或者直接設定 height: 80px; 如果不希望它自動增長 */
+    width: 100%;      /* 確保它佔滿父容器寬度 */
+    padding: 8px 10px; /* 與其他 input 保持一致的內邊距 */
+    line-height: 1.5;  /* 增加行高，使多行文本更易讀 */
+    resize: vertical;  /* 只允許垂直方向調整大小，防止水平方向破壞佈局 */
+                       /* 或者 resize: none; 如果不希望使用者調整大小 */
+}

@@ -1,0 +1,184 @@
+ /* css/_recommendations.css */
+
+ .recommendations-view h2, .food-diary-view h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.4em; /* Consistent heading size for content area */
+}
+.search-area {
+    text-align: center;
+    margin-bottom: 25px;
+    background-color: #FFFDF5;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-area h2 {
+    margin-bottom: 15px;
+}
+
+/* --- Added for two input fields --- */
+.search-area .search-input-group {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+    align-items: center; /* Center them horizontally */
+    gap: 10px; /* Space between inputs */
+    width: 100%; /* Take full width of search-area for centering */
+    margin-bottom: 15px; /* Space before the search button */
+}
+
+.search-area input[type="text"].main-search-input,
+.search-area input[type="text"].location-search-input {
+    width: 80%; /* Or a fixed max-width */
+    max-width: 500px;
+    padding: 12px 15px;
+    border: 1px solid #A1887F;
+    border-radius: 25px; /* Consistent rounded corners */
+    font-size: 1.05em;
+    text-align: center; /* Center placeholder and input text */
+    background-color: #fff; /* Ensure background is white */
+    color: #5D4037; /* Input text color */
+}
+
+.search-area input[type="text"].location-search-input {
+    font-size: 0.95em; /* Slightly smaller for secondary input if desired */
+    background-color: #FFFDF5; /* Slightly different bg or keep same as main */
+}
+/* --- End of added styles for two inputs --- */
+
+
+.search-area input[type="text"]::placeholder { /* General placeholder style */
+    color: #BCAAA4;
+}
+
+.search-submit-button {
+    padding: 10px 30px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #5D4037;
+    background-color: #F5E5C0;
+    border: 1px solid #A1887F;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 5px; /* Add some space if inputs are directly above */
+}
+.search-submit-button:hover {
+    background-color: #E4D6B3;
+}
+
+/* Recommendation Results Area */
+#recommendation-grid-results {
+    display: flex;
+    flex-direction: column; /* Changed from grid to column for list items */
+    gap: 15px; /* Space between list items */
+    min-height: 200px; /* Keep minimum height */
+    /* justify-content: center; Align items to the start when they appear */
+    /* align-items: center; Stretch items to fill width */
+}
+#initial-recommendation-message {
+    text-align: center;
+    color: #A1887F;
+    font-size: 1.1em;
+    padding: 20px;
+    width: 100%; /* Ensure it takes full width if results are empty */
+}
+
+/* If grid results has items, align them to top and stretch */
+#recommendation-grid-results:not(:empty):has(.food-card-list-item) {
+   justify-content: flex-start;
+   align-items: stretch;
+}
+
+/* Style for any direct paragraph children (like error messages) if not initial message */
+#recommendation-grid-results > p:not(#initial-recommendation-message) {
+    text-align: center;
+    color: #8D6E63; /* Or error color like #D32F2F */
+    padding: 20px;
+    width: 100%;
+}
+
+
+/* List Item Styles (largely the same, ensure cursor: pointer is effective) */
+.food-card-list-item {
+    display: flex;
+    background-color: #FFFDF5;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    gap: 15px;
+    cursor: pointer; /* Make the whole card clickable */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%; /* Make items take full width of the column */
+    text-align: left; /* Keep text aligned left within the card */
+}
+.food-card-list-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+.food-card-list-item .food-card-placeholder-img {
+    flex-shrink: 0;
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    background-color: #EAE0C7;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em; /* Icon size */
+    color: #A1887F;
+}
+ .food-card-list-item .food-card-text-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 4px; /* Space between text elements */
+    color: #6D4C41; /* Default text color for the card */
+}
+.food-card-list-item h3 {
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #5D4037; /* Heading color */
+    margin-bottom: 2px;
+}
+.food-card-list-item .food-card-address {
+    font-size: 0.9em;
+    color: #8D6E63;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.food-card-list-item .address-icon {
+    font-size: 0.9em; /* Icon size for address */
+    color: #BCAAA4;
+}
+.food-card-list-item .food-card-rating {
+    font-size: 0.9em;
+    color: #BCAAA4; /* Rating text color */
+}
+.food-card-list-item .food-card-reason {
+    font-size: 0.9em;
+    color: #795548; /* Reason text color */
+    line-height: 1.4;
+}
+.food-card-list-item .food-card-cost {
+    font-size: 0.9em;
+    color: #A1887F;
+    font-weight: bold;
+    margin-top: auto; /* Pushes cost to the bottom if card height varies */
+}
+
+/* Error message specific style for recommendations */
+.error-message {
+    color: #D32F2F; /* Red color for errors */
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    background-color: #FFEBEE; /* Light red background */
+    border: 1px solid #FFCDD2; /* Lighter red border */
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}

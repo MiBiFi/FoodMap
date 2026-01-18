@@ -1,0 +1,10 @@
+/vendor/
+/combine/
+/index.php
+/.env
+.idea/
+composer.lock
+/demos/
+/TODOS.md
+.DS_Store
+/cleanup.sh

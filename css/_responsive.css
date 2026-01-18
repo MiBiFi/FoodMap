@@ -1,0 +1,59 @@
+/* css/_responsive.css */
+
+@media (max-width: 1024px) {
+    .left-sidebar { flex: 0 0 200px; }
+    .right-sidebar { flex: 0 0 220px; }
+    .sidebar-scroll-content, .right-sidebar, .content-area { padding: 15px; }
+}
+
+@media (max-width: 768px) {
+    body { overflow: auto; }
+    .main-layout { flex-direction: column; height: auto; overflow: visible; }
+    .sidebar { width: 100%; position: static; height: auto; border: none; overflow-y: visible; }
+    .left-sidebar { order: 2; border-bottom: 1px solid #EFEBE9; }
+    .right-sidebar { order: 3; border-bottom: 1px solid #EFEBE9; }
+    .content-area { order: 1; min-height: 300px; overflow-y: visible; height: auto; }
+    .sidebar-scroll-content { overflow-y: visible; }
+    .app-header { padding: 10px 15px; flex-direction: column; gap: 10px; align-items: flex-start; }
+    .main-nav { width: 100%; text-align: center;}
+    .main-nav a { margin: 5px 10px; display: inline-block; }
+    .logo { font-size: 1.6em; }
+
+    /* Adjust content area items on smaller screens */
+    .add-diary-entry { flex-direction: column; align-items: stretch; }
+    .add-image-placeholder { flex-basis: auto; height: 120px; }
+    .diary-entry { flex-direction: column; }
+    .entry-image-container { flex-basis: auto; width: 60%; max-width: 200px; margin: 0 auto 10px auto; }
+    .recommendation-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    .right-sidebar.hidden-section { border-bottom: none; }
+
+    /* Adjust profile forms */
+    .profile-form label { flex-basis: 80px; text-align: left; margin-right: 5px;}
+    .profile-form .form-row { flex-wrap: wrap;}
+    .add-pref-wrapper { align-items: center; }
+    .add-pref-input-group { flex-direction: column; align-items: stretch; width: 100%; }
+    .add-pref-input-group label { text-align: left; margin-bottom: 5px;}
+    .add-buttons-container { width: 100%; justify-content: space-around;}
+
+    .food-card-list-item { flex-direction: column; align-items: center; text-align: center;}
+    .food-card-list-item .food-card-placeholder-img { width: 80%; max-width: 150px; height: 120px; margin-bottom: 10px; }
+    .food-card-list-item .food-card-text-content { align-items: center; width: 100%;}
+
+}
+
+@media (max-width: 480px) {
+   /* .recommendation-grid { grid-template-columns: 1fr; } */ /* Keep as column or adjust list item */
+   /* .food-card img.food-image { height: 150px; } */
+    .entry-image-container { width: 80%; }
+
+    .profile-form label { flex-basis: 100%; text-align: left; margin-bottom: 3px;}
+    .profile-form .form-row { flex-direction: column; align-items: stretch;}
+    .profile-form input[type="text"],
+    .profile-form input[type="date"],
+    .profile-form input[type="time"] { width: 100%;}
+    .add-pref-input-group input[type="text"] { min-width: unset;}
+    .add-buttons-container { gap: 10px;}
+    .add-buttons-container .save-button { padding: 8px 12px; font-size: 0.85em;}
+    .modal-content { padding: 20px; }
+    .main-nav a { display: block; margin: 8px 0; padding: 5px; background-color: #f0eade; border-radius: 4px; }
+}

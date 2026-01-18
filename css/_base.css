@@ -1,0 +1,60 @@
+ /* css/_base.css */
+
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #FFF9E8;
+    color: #6D4C41;
+    font-size: 14px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+a {
+    color: #8D6E63;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2, h3, h4 {
+    color: #5D4037;
+    margin-bottom: 10px;
+}
+
+h2 { font-size: 1.3em; }
+h3 { font-size: 1.1em; }
+h4 { font-size: 1em; }
+
+.hidden-section {
+    display: none !important;
+}
+.requires-login {
+    /* No visual style needed by default */
+}
+.loading-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    color: #A1887F;
+    font-size: 1.2em;
+}
+.loading-placeholder .fa-spinner {
+    font-size: 2em;
+    margin-top: 15px;
+}
